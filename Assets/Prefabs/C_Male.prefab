@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 136689169959784328}
   m_Layer: 0
   m_Name: C_Male
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +150,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120095748666998}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d790c38f94b9a92469383bbaa6831272, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
