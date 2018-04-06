@@ -21,6 +21,36 @@ ModelImporter:
     100026: SM_Decors03
     100028: SM_Decors04
     100030: SM_Decors05
+    100032: SM_Pillar2
+    100034: SM_Pillar3
+    100036: SM_Pillar4
+    100038: SM_StageLight01
+    100040: SM_StageLight02
+    100042: SM_StageLight03
+    100044: SM_Stairs02
+    100046: SM_Stairs
+    100048: SM_FrontPlanks
+    100050: SM_Stairs1
+    100052: Rideaux
+    100054: SM_Rideau01
+    100056: SM_Rideau02
+    100058: SM_Rideau03
+    100060: SM_Rideau04
+    100062: SM_Rideau05
+    100064: SM_Rideau06
+    100066: SM_Rideau07
+    100068: SM_Ropes01
+    100070: SM_Ropes02
+    100072: SM_Broken_DL
+    100074: SM_Broken_DLL
+    100076: SM_Broken_DR
+    100078: SM_Broken_DRR
+    100080: SM_Broken_Main
+    100082: SM_Broken_UL
+    100084: SM_Broken_ULL
+    100086: SM_Broken_UR
+    100088: SM_Broken_URR
+    100090: StageBrokenParts
     400000: //RootNode
     400002: SM_Whisperer
     400004: SM_Whisperer02
@@ -37,6 +67,36 @@ ModelImporter:
     400026: SM_Decors03
     400028: SM_Decors04
     400030: SM_Decors05
+    400032: SM_Pillar2
+    400034: SM_Pillar3
+    400036: SM_Pillar4
+    400038: SM_StageLight01
+    400040: SM_StageLight02
+    400042: SM_StageLight03
+    400044: SM_Stairs02
+    400046: SM_Stairs
+    400048: SM_FrontPlanks
+    400050: SM_Stairs1
+    400052: Rideaux
+    400054: SM_Rideau01
+    400056: SM_Rideau02
+    400058: SM_Rideau03
+    400060: SM_Rideau04
+    400062: SM_Rideau05
+    400064: SM_Rideau06
+    400066: SM_Rideau07
+    400068: SM_Ropes01
+    400070: SM_Ropes02
+    400072: SM_Broken_DL
+    400074: SM_Broken_DLL
+    400076: SM_Broken_DR
+    400078: SM_Broken_DRR
+    400080: SM_Broken_Main
+    400082: SM_Broken_UL
+    400084: SM_Broken_ULL
+    400086: SM_Broken_UR
+    400088: SM_Broken_URR
+    400090: StageBrokenParts
     2100000: lambert1
     2300000: //RootNode
     2300002: SM_Whisperer
@@ -54,6 +114,34 @@ ModelImporter:
     2300026: SM_Decors03
     2300028: SM_Decors04
     2300030: SM_Decors05
+    2300032: SM_Pillar2
+    2300034: SM_Pillar3
+    2300036: SM_Pillar4
+    2300038: SM_StageLight01
+    2300040: SM_StageLight02
+    2300042: SM_StageLight03
+    2300044: SM_Stairs02
+    2300046: SM_Stairs
+    2300048: SM_FrontPlanks
+    2300050: SM_Stairs1
+    2300052: SM_Rideau01
+    2300054: SM_Rideau02
+    2300056: SM_Rideau03
+    2300058: SM_Rideau04
+    2300060: SM_Rideau05
+    2300062: SM_Rideau06
+    2300064: SM_Rideau07
+    2300066: SM_Ropes01
+    2300068: SM_Ropes02
+    2300070: SM_Broken_DL
+    2300072: SM_Broken_DLL
+    2300074: SM_Broken_DR
+    2300076: SM_Broken_DRR
+    2300078: SM_Broken_Main
+    2300080: SM_Broken_UL
+    2300082: SM_Broken_ULL
+    2300084: SM_Broken_UR
+    2300086: SM_Broken_URR
     3300000: //RootNode
     3300002: SM_Whisperer
     3300004: SM_Whisperer02
@@ -70,6 +158,34 @@ ModelImporter:
     3300026: SM_Decors03
     3300028: SM_Decors04
     3300030: SM_Decors05
+    3300032: SM_Pillar2
+    3300034: SM_Pillar3
+    3300036: SM_Pillar4
+    3300038: SM_StageLight01
+    3300040: SM_StageLight02
+    3300042: SM_StageLight03
+    3300044: SM_Stairs02
+    3300046: SM_Stairs
+    3300048: SM_FrontPlanks
+    3300050: SM_Stairs1
+    3300052: SM_Rideau01
+    3300054: SM_Rideau02
+    3300056: SM_Rideau03
+    3300058: SM_Rideau04
+    3300060: SM_Rideau05
+    3300062: SM_Rideau06
+    3300064: SM_Rideau07
+    3300066: SM_Ropes01
+    3300068: SM_Ropes02
+    3300070: SM_Broken_DL
+    3300072: SM_Broken_DLL
+    3300074: SM_Broken_DR
+    3300076: SM_Broken_DRR
+    3300078: SM_Broken_Main
+    3300080: SM_Broken_UL
+    3300082: SM_Broken_ULL
+    3300084: SM_Broken_UR
+    3300086: SM_Broken_URR
     4300000: pCube1
     4300002: SM_Stage
     4300004: SM_Whisperer
@@ -87,6 +203,35 @@ ModelImporter:
     4300028: SM_Decors01
     4300030: SM_Decors04
     4300032: SM_Decors05
+    4300034: SM_StageOpen
+    4300036: SM_StageLight03
+    4300038: SM_StageLight02
+    4300040: SM_StageLight01
+    4300042: SM_Pillar2
+    4300044: SM_Pillar3
+    4300046: SM_Pillar4
+    4300048: SM_Stairs02
+    4300050: SM_Stairs
+    4300052: SM_FrontPlanks
+    4300054: SM_Stairs1
+    4300056: SM_Rideau01
+    4300058: SM_Rideau02
+    4300060: SM_Rideau03
+    4300062: SM_Rideau04
+    4300064: SM_Rideau05
+    4300066: SM_Rideau06
+    4300068: SM_Rideau07
+    4300070: SM_Ropes02
+    4300072: SM_Ropes01
+    4300074: SM_Broken_Main
+    4300076: SM_Broken_URR
+    4300078: SM_Broken_DRR
+    4300080: SM_Broken_UR
+    4300082: SM_Broken_DR
+    4300084: SM_Broken_UL
+    4300086: SM_Broken_ULL
+    4300088: SM_Broken_DLL
+    4300090: SM_Broken_DL
   externalObjects: {}
   materials:
     importMaterials: 1
