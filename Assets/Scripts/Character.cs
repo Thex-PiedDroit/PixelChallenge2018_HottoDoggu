@@ -14,6 +14,9 @@ public class Character : MonoBehaviour
 
 	public SpriteRenderer m_pBlockFlash = null;
 
+	public AudioSource m_pAudioSource = null;
+	public AudioSource m_pFootStepsAudioSource = null;
+
 	public float m_fAcceleration = 10.0f;
 	public float m_fMaxSpeed = 5.0f;
 
@@ -37,6 +40,8 @@ public class Character : MonoBehaviour
 
 #region Variables (private)
 
+	private string m_sName = null;
+
 	private bool m_bActive = true;
 	public bool IsActive
 	{
@@ -50,10 +55,16 @@ public class Character : MonoBehaviour
 	private bool m_bIsStunned = false;
 	private bool m_bCanMove = true;
 	private bool m_bCanDash = true;
+
 	private bool m_bIsDead = false;
 
 	#endregion
 
+
+	private void Awake()
+	{
+		m_sName = m_iCharacterID == 0 ? "F" : "M";
+	}
 
 	private void Update()
 	{
@@ -200,6 +211,9 @@ public class Character : MonoBehaviour
 
 	private void OnCollisionEnter(Collision pCollision)
 	{
+		if (pCollision.gameObject.tag == "Character")
+			AudioManager.Instance.PlaySound("Collision_" + m_sName, m_pAudioSource);
+
 		if (m_bIsDead)
 		{
 			m_bIsDead = false;
@@ -261,10 +275,17 @@ public class Character : MonoBehaviour
 
 	private void Die()
 	{
+		AudioManager.Instance.PlaySound("Death_" + m_sName, m_pAudioSource);
+
 		StopAllCoroutines();
 		ResetConditions();
 
 		GameManager.Instance.RespawnMe(this);
 		m_bIsDead = true;
+	}
+
+	public void PlayFootStep()
+	{
+		AudioManager.Instance.PlaySound("FootSteps_" + m_sName, m_pFootStepsAudioSource);
 	}
 }
