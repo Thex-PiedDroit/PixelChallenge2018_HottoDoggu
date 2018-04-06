@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
 	public Vector3 m_tPlayer1SpawnPoint = Vector3.zero;
 	public Vector3 m_tPlayer2SpawnPoint = Vector3.zero;
 
+	public FollowSpot m_pPlayer1FollowSpot = null;
+	public FollowSpot m_pPlayer2FollowSpot = null;
+
 	public Transform m_pCharactersContainer = null;
 	public Text m_pWinText = null;
 
@@ -80,6 +83,9 @@ public class GameManager : MonoBehaviour
 
 			m_pCharactersStats.Add(m_pPlayer1Instance, new CharacterStats());
 			m_pCharactersStats.Add(m_pPlayer2Instance, new CharacterStats());
+
+			m_pPlayer1FollowSpot.m_pTarget = m_pPlayer1Instance.transform;
+			m_pPlayer2FollowSpot.m_pTarget = m_pPlayer2Instance.transform;
 		}
 		else
 		{

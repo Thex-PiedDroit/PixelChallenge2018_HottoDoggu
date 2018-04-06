@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -325,8 +325,9 @@ GameObject:
   m_Component:
   - component: {fileID: 385710118}
   - component: {fileID: 385710117}
+  - component: {fileID: 385710119}
   m_Layer: 0
-  m_Name: Spotlight (1)
+  m_Name: FollowSpot_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,7 +344,7 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 0.85740364, b: 0.72794116, a: 1}
   m_Intensity: 1
-  m_Range: 50
+  m_Range: 100
   m_SpotAngle: 20
   m_CookieSize: 10
   m_Shadows:
@@ -381,6 +382,18 @@ Transform:
   m_Father: {fileID: 1189187894}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 54.631004, y: 1.056, z: -0.27800003}
+--- !u!114 &385710119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385710116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323f668bb39af10428f44601271fbfb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pTarget: {fileID: 0}
 --- !u!1 &405096090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,8 +1198,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1361449785}
   - component: {fileID: 1361449784}
+  - component: {fileID: 1361449786}
   m_Layer: 0
-  m_Name: Spotlight
+  m_Name: FollowSpot_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1203,7 +1217,7 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 0.85740364, b: 0.72794116, a: 1}
   m_Intensity: 1
-  m_Range: 50
+  m_Range: 100
   m_SpotAngle: 20
   m_CookieSize: 10
   m_Shadows:
@@ -1241,6 +1255,18 @@ Transform:
   m_Father: {fileID: 1189187894}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 54.187004, y: 0, z: 0}
+--- !u!114 &1361449786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1361449783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323f668bb39af10428f44601271fbfb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pTarget: {fileID: 0}
 --- !u!1 &1415128098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,6 +1646,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_tPlayer1SpawnPoint: {x: -3, y: 0, z: 0}
   m_tPlayer2SpawnPoint: {x: 3, y: 0, z: 0}
+  m_pPlayer1FollowSpot: {fileID: 1361449786}
+  m_pPlayer2FollowSpot: {fileID: 385710119}
   m_pCharactersContainer: {fileID: 1738967829}
   m_pWinText: {fileID: 2014109911}
   m_pPlayer1Prefab: {fileID: 114125866995683006, guid: b67d03931062aaf49a7a9a1768fc977d,
