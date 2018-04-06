@@ -6,6 +6,8 @@ public class Character : MonoBehaviour
 #region Variables (public)
 
 	public Rigidbody m_pRigidBody = null;
+	public Animator m_pAnimator = null;
+	public SpriteRenderer m_pSpriteRenderer = null;
 
 	public float m_fAcceleration = 10.0f;
 	public float m_fMaxSpeed = 5.0f;
@@ -27,6 +29,7 @@ public class Character : MonoBehaviour
 	private void Update()
 	{
 		CatchInputs();
+		UpdateAnimator();
 	}
 
 	private void CatchInputs()
@@ -46,6 +49,13 @@ public class Character : MonoBehaviour
 
 		if (!m_bIsDead && Input.GetButtonDown("Attack_" + m_iCharacterID))
 			m_pRigidBody.velocity = tDirection * m_fAttackImpulseForce;
+	}
+
+	private void UpdateAnimator()
+	{
+		bool bMoving = m_pRigidBody.velocity.sqrMagnitude > 0.1f;
+		m_pAnimator.SetBool("Moving", bMoving);
+		m_pSpriteRenderer.flipX = bMoving && m_pRigidBody.velocity.x < 0.0f;
 	}
 
 	private void OnTriggerEnter(Collider pCollider)
