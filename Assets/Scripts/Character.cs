@@ -39,7 +39,7 @@ public class Character : MonoBehaviour
 
 		Vector3 tDirection = new Vector3(fHorizontal, 0.0f, fVertical).normalized;
 
-		if ((fHorizontal != 0.0f || fVertical != 0.0f) && m_pRigidBody.velocity.x0z().sqrMagnitude < m_fMaxSpeed.Sqrd())
+		if (transform.position.y >= -0.05f && (fHorizontal != 0.0f || fVertical != 0.0f) && m_pRigidBody.velocity.x0z().sqrMagnitude < m_fMaxSpeed.Sqrd())
 		{
 			if (m_bIsDead)
 				tDirection *= 0.2f;
