@@ -144,6 +144,7 @@ MonoBehaviour:
   m_fAcceleration: 20
   m_fMaxSpeed: 5
   m_fAttackImpulseForce: 10
+  m_fRespawnImpactImpulseForce: 12
   m_iCharacterID: 1
 --- !u!136 &136689169959784328
 CapsuleCollider:
