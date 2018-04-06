@@ -7,8 +7,10 @@ public class Character : MonoBehaviour
 
 	public Rigidbody m_pRigidBody = null;
 
-	public float m_fAcceleration = 1.0f;
-	public float m_fMaxSpeed = 1.0f;
+	public float m_fAcceleration = 10.0f;
+	public float m_fMaxSpeed = 5.0f;
+
+	public float m_fAttackImpulseForce = 10.0f;
 
 	public int m_iCharacterID = 0;
 
@@ -31,12 +33,17 @@ public class Character : MonoBehaviour
 		float fHorizontal = Input.GetAxis("Horizontal_" + m_iCharacterID);
 		float fVertical= Input.GetAxis("Vertical_" + m_iCharacterID);
 
-		if (fHorizontal != 0.0f || fVertical != 0.0f)
-		{
-			m_pRigidBody.AddForce(new Vector3(fHorizontal, 0.0f, fVertical) * m_fAcceleration);
+		Vector3 tDirection = new Vector3(fHorizontal, 0.0f, fVertical);
 
-			if (m_pRigidBody.velocity.sqrMagnitude > m_fMaxSpeed.Sqrd())
-				m_pRigidBody.velocity = m_pRigidBody.velocity.normalized * m_fMaxSpeed;
+		if ((fHorizontal != 0.0f || fVertical != 0.0f) && m_pRigidBody.velocity.sqrMagnitude < m_fMaxSpeed.Sqrd())
+		{
+			m_pRigidBody.AddForce(tDirection * m_fAcceleration);
+		}
+
+		if (Input.GetButtonDown("Attack_" + m_iCharacterID))
+		{
+			m_pRigidBody.velocity = Vector3.zero;
+			m_pRigidBody.AddForce(tDirection * m_fAttackImpulseForce, ForceMode.Impulse);
 		}
 	}
 }
