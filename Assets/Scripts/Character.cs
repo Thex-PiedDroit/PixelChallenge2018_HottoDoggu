@@ -33,17 +33,16 @@ public class Character : MonoBehaviour
 		float fHorizontal = Input.GetAxis("Horizontal_" + m_iCharacterID);
 		float fVertical= Input.GetAxis("Vertical_" + m_iCharacterID);
 
-		Vector3 tDirection = new Vector3(fHorizontal, 0.0f, fVertical);
+		Vector3 tDirection = new Vector3(fHorizontal, 0.0f, fVertical).normalized;
 
-		if ((fHorizontal != 0.0f || fVertical != 0.0f) && m_pRigidBody.velocity.sqrMagnitude < m_fMaxSpeed.Sqrd())
+		if ((fHorizontal != 0.0f || fVertical != 0.0f) && m_pRigidBody.velocity.x0z().sqrMagnitude < m_fMaxSpeed.Sqrd())
 		{
 			m_pRigidBody.AddForce(tDirection * m_fAcceleration);
 		}
 
 		if (Input.GetButtonDown("Attack_" + m_iCharacterID))
+			m_pRigidBody.velocity = tDirection * m_fAttackImpulseForce;
 		{
-			m_pRigidBody.velocity = Vector3.zero;
-			m_pRigidBody.AddForce(tDirection * m_fAttackImpulseForce, ForceMode.Impulse);
 		}
 	}
 }
