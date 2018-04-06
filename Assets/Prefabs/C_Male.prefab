@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pRigidBody: {fileID: 54130816194918940}
+  m_pAnimator: {fileID: 95163602960009452}
+  m_pSpriteRenderer: {fileID: 212914099336289736}
   m_fAcceleration: 20
   m_fMaxSpeed: 5
   m_fAttackImpulseForce: 10
