@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bLockYRotation: 0
-  m_fMaxXRotation: 0
+  m_fMaxXRotation: 20
 --- !u!136 &136689169959784328
 CapsuleCollider:
   m_ObjectHideFlags: 1

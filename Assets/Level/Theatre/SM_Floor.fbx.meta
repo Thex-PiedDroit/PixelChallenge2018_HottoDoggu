@@ -1,17 +1,16 @@
 fileFormatVersion: 2
-guid: 40cfb48afccfc6d489fe2bf8e41ce75e
-timeCreated: 1523007519
+guid: 9a0f083fd8de6584c94052d192e7d3ef
+timeCreated: 1523043283
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
-    2100002: Prop
+    2100000: Floor
     2300000: //RootNode
     3300000: //RootNode
-    4300000: SM_Cloud
+    4300000: SM_Carpet
   externalObjects: {}
   materials:
     importMaterials: 0
