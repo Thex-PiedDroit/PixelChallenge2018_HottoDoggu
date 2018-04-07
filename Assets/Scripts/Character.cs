@@ -15,12 +15,15 @@ public class Character : MonoBehaviour
 	public float m_fAttackImpulseForce = 10.0f;
 	public float m_fRespawnImpactImpulseForce = 15.0f;
 
+	public float m_fVelocitySlerpSpeed = 12.0f;
+
 	public int m_iCharacterID = 0;
 
 	#endregion
 
 #region Variables (private)
 
+	private float m_fVelocityMagnitudeToClampTo = 0.0f;
 	private bool m_bIsDead = false;
 
 	#endregion
@@ -39,12 +42,35 @@ public class Character : MonoBehaviour
 
 		Vector3 tDirection = new Vector3(fHorizontal, 0.0f, fVertical).normalized;
 
-		if (transform.position.y >= -0.05f && (fHorizontal != 0.0f || fVertical != 0.0f) && m_pRigidBody.velocity.x0z().sqrMagnitude < m_fMaxSpeed.Sqrd())
+		if (transform.position.y >= -0.05f && (fHorizontal != 0.0f || fVertical != 0.0f))
 		{
 			if (m_bIsDead)
 				tDirection *= 0.2f;
 
-			m_pRigidBody.AddForce(tDirection * m_fAcceleration);
+			if (m_pRigidBody.velocity.x0z().sqrMagnitude >= m_fMaxSpeed.Sqrd())
+			{
+				float fDot = Vector3.Dot(tDirection, m_pRigidBody.velocity);
+				if (fDot < 0.0f)
+				{
+					m_pRigidBody.AddForce(tDirection * m_fAcceleration);
+					m_fVelocityMagnitudeToClampTo = 0.0f;
+				}
+				else
+				{
+					float fMagnitude = m_pRigidBody.velocity.magnitude;
+					m_pRigidBody.AddForce(tDirection * m_fAcceleration);
+
+					if (m_fVelocityMagnitudeToClampTo != 0.0f)
+						m_pRigidBody.velocity = m_pRigidBody.velocity.normalized * m_fVelocityMagnitudeToClampTo;
+
+					m_fVelocityMagnitudeToClampTo = fMagnitude;
+				}
+			}
+			else
+			{
+				m_pRigidBody.AddForce(tDirection * m_fAcceleration);
+				m_fVelocityMagnitudeToClampTo = 0.0f;
+			}
 		}
 
 		if (!m_bIsDead && Input.GetButtonDown("Attack_" + m_iCharacterID))
