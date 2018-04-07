@@ -139,6 +139,7 @@ MonoBehaviour:
   m_fDashSpeed: 13
   m_fDashPower: 8
   m_fDashDuration: 0.3
+  m_fDashCD: 1.5
   m_fAimAssistAngle: 90
   m_fRespawnImpactImpulseForce: 12
   m_iCharacterID: 1

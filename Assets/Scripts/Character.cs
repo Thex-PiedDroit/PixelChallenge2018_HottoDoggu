@@ -18,6 +18,7 @@ public class Character : MonoBehaviour
 	public float m_fDashSpeed = 15.0f;
 	public float m_fDashPower = 12.0f;
 	public float m_fDashDuration = 0.5f;
+	public float m_fDashCD = 1.5f;
 	public float m_fAimAssistAngle = 30.0f;
 
 	public float m_fRespawnImpactImpulseForce = 15.0f;
@@ -29,6 +30,7 @@ public class Character : MonoBehaviour
 #region Variables (private)
 
 	private bool m_bCanMove = true;
+	private bool m_bCanDash = true;
 	private bool m_bIsDead = false;
 
 	#endregion
@@ -61,7 +63,7 @@ public class Character : MonoBehaviour
 				m_pRigidBody.AddForce((tDirection * m_fAcceleration) - m_pRigidBody.velocity);
 		}
 
-		if (!m_bIsDead && Input.GetButtonDown("Attack_" + m_iCharacterID))
+		if (!m_bIsDead && m_bCanDash && Input.GetButtonDown("Attack_" + m_iCharacterID))
 			Attack(tDirection);
 	}
 
@@ -77,6 +79,7 @@ public class Character : MonoBehaviour
 	private IEnumerator Dash(Vector3 tDashDirection)
 	{
 		m_bCanMove = false;
+		m_bCanDash = false;
 
 		float fStartTime = Time.time;
 		while (Time.time - fStartTime < m_fDashDuration)
@@ -86,6 +89,12 @@ public class Character : MonoBehaviour
 		}
 
 		m_bCanMove = true;
+
+		fStartTime = Time.time;
+		while (Time.time - fStartTime < m_fDashCD - m_fDashDuration)
+			yield return false;
+
+		m_bCanDash = true;
 	}
 
 	private void UpdateAnimator()
@@ -120,6 +129,7 @@ public class Character : MonoBehaviour
 
 			StopAllCoroutines();
 			m_bCanMove = true;
+			m_bCanDash = true;
 		}
 	}
 
@@ -127,6 +137,7 @@ public class Character : MonoBehaviour
 	{
 		StopAllCoroutines();
 		m_bCanMove = true;
+		m_bCanDash = true;
 
 		GameManager.Instance.RespawnMe(this);
 		m_bIsDead = true;
