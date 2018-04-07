@@ -113,6 +113,8 @@ public class GameManager : MonoBehaviour
 
 		m_bInGame = true;
 		StartCoroutine(ElapseGame());
+
+		EventsManager.Instance.Init();
 	}
 
 	private IEnumerator ElapseGame()
@@ -181,8 +183,8 @@ public class GameManager : MonoBehaviour
 		m_bInGame = false;
 
 		StopAllCoroutines();
-		m_pPlayer1Instance.gameObject.SetActive(false);
-		m_pPlayer2Instance.gameObject.SetActive(false);
+		m_pPlayer1Instance.IsActive = false;
+		m_pPlayer2Instance.IsActive = false;
 	}
 
 

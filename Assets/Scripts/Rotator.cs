@@ -38,6 +38,6 @@ public class Rotator : MonoBehaviour {
 		tempPos.x += Mathf.Sin (Time.fixedTime * Mathf.PI * frequencyX) * amplitudeX;
 		tempPos.y += Mathf.Sin (Time.fixedTime * Mathf.PI * frequencyY) * amplitudeY;
 
-		transform.position = tempPos;
+		transform.localPosition = tempPos;
 }
 }
