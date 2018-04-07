@@ -115,6 +115,9 @@ public class Character : MonoBehaviour
 		m_bCanMove = false;
 		m_bCanDash = false;
 
+		m_pAnimator.ResetTrigger("Spin");
+		m_pAnimator.SetTrigger("Spin");
+
 		float fStartTime = Time.time;
 		while (Time.time - fStartTime < m_fDashDuration)
 		{
@@ -135,6 +138,7 @@ public class Character : MonoBehaviour
 	{
 		if (tDirection != Vector3.zero)
 			transform.forward = tDirection.normalized;
+
 		StartCoroutine(ElapseBlock());
 	}
 
@@ -181,6 +185,7 @@ public class Character : MonoBehaviour
 	{
 		bool bMoving = m_pRigidBody.velocity.sqrMagnitude > 0.1f;
 		m_pAnimator.SetBool("Moving", bMoving);
+		m_pAnimator.SetBool("Block", m_bBlocking);
 		m_pSpriteRenderer.flipX = bMoving && m_pRigidBody.velocity.x < 0.0f;
 	}
 
