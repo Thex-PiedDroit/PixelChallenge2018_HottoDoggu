@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 	public MainMenu m_pMainMenu = null;
 	public GameObject m_pPauseMenu = null;
 
+	public Transform m_pTauntIconsContainer = null;
+
 	public Image m_pWinImage = null;
 	public Sprite m_pP1WinsSprite = null;
 	public Sprite m_pP2WinsSprite = null;

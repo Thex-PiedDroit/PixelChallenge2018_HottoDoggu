@@ -23,9 +23,25 @@ GameObject:
   - component: {fileID: 54130816194918940}
   - component: {fileID: 136689169959784328}
   - component: {fileID: 82671293204071882}
+  - component: {fileID: 82770602712266044}
   m_Layer: 12
   m_Name: C_Male
   m_TagString: Character
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1143696591420698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4041042958156492}
+  m_Layer: 12
+  m_Name: TauntFollowPoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,6 +84,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4041042958156492
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143696591420698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4907859269532892}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4188748871871024
 Transform:
   m_ObjectHideFlags: 1
@@ -106,6 +135,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4737545962177240}
+  - {fileID: 4041042958156492}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -125,6 +155,86 @@ Rigidbody:
   m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!82 &82671293204071882
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1120095748666998}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &82770602712266044
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -341,11 +451,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pEnemy: {fileID: 0}
+  m_pTauntIconPrefab: {fileID: 114702496411064152, guid: 5a512a5b9ef880c45be52945ad2b230f,
+    type: 2}
+  m_pTauntFollowPoint: {fileID: 4041042958156492}
   m_pRigidBody: {fileID: 54130816194918940}
   m_pAnimator: {fileID: 95163602960009452}
   m_pSpriteRenderer: {fileID: 212914099336289736}
   m_pBlockFlash: {fileID: 212147385361105600}
   m_pAudioSource: {fileID: 82671293204071882}
+  m_pTauntsAudioSource: {fileID: 82770602712266044}
   m_fAcceleration: 40
   m_fMaxSpeed: 5
   m_fDashSpeed: 13
@@ -359,7 +473,7 @@ MonoBehaviour:
   m_fBlockStunDuration: 1
   m_fBlockRetaliationPower: 80
   m_fRespawnImpactImpulseForce: 12
-  m_iCharacterID: 0
+  m_iCharacterID: 1
 --- !u!114 &114211064836941276
 MonoBehaviour:
   m_ObjectHideFlags: 1
