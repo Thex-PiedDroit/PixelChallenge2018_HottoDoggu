@@ -35,6 +35,13 @@ public class Character : MonoBehaviour
 
 #region Variables (private)
 
+	private bool m_bActive = true;
+	public bool IsActive
+	{
+		set { m_bActive = value; }
+		get { return m_bActive; }
+	}
+
 	private bool m_bBlocking = false;
 	private bool m_bTimedBlock = false;
 
@@ -49,7 +56,7 @@ public class Character : MonoBehaviour
 
 	private void Update()
 	{
-		if (!m_bIsStunned)
+		if (!m_bIsStunned && m_bActive)
 			CatchInputs();
 		UpdateAnimator();
 	}

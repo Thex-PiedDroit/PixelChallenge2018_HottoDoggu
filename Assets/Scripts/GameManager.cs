@@ -17,9 +17,13 @@ public class GameManager : MonoBehaviour
 	public FollowSpot m_pPlayer2FollowSpot = null;
 
 	public Transform m_pCharactersContainer = null;
-	public Text m_pWinText = null;
 	public MainMenu m_pMainMenu = null;
 	public GameObject m_pPauseMenu = null;
+
+	public Image m_pWinImage = null;
+	public Sprite m_pP1WinsSprite = null;
+	public Sprite m_pP2WinsSprite = null;
+	public Sprite m_pDrawSprite = null;
 
 	public Character m_pPlayer1Prefab = null;
 	public Character m_pPlayer2Prefab = null;
@@ -75,7 +79,7 @@ public class GameManager : MonoBehaviour
 	public void LaunchGame()
 	{
 		m_bCanRestartGame = false;
-		m_pWinText.gameObject.SetActive(false);
+		m_pWinImage.gameObject.SetActive(false);
 
 		if (m_pPlayer1Instance == null)
 		{
@@ -95,13 +99,16 @@ public class GameManager : MonoBehaviour
 		}
 		else
 		{
+			m_pPlayer1Instance.m_pRigidBody.velocity = Vector3.zero;
+			m_pPlayer2Instance.m_pRigidBody.velocity = Vector3.zero;
+
 			m_pPlayer1Instance.transform.position = m_tPlayer1SpawnPoint;
 			m_pCharactersStats[m_pPlayer1Instance].Reset();
-			m_pPlayer1Instance.gameObject.SetActive(true);
+			m_pPlayer1Instance.IsActive = true;
 
 			m_pPlayer2Instance.transform.position = m_tPlayer2SpawnPoint;
 			m_pCharactersStats[m_pPlayer2Instance].Reset();
-			m_pPlayer2Instance.gameObject.SetActive(true);
+			m_pPlayer2Instance.IsActive = true;
 		}
 
 		m_bInGame = true;
@@ -139,23 +146,23 @@ public class GameManager : MonoBehaviour
 
 		if (iP1Deaths < iP2Deaths)
 		{
-			m_pWinText.text = "Player 1 Wins!";
+			m_pWinImage.sprite = m_pP1WinsSprite;
 		}
 		else if (iP1Deaths == iP2Deaths)
 		{
-			m_pWinText.text = "Draw!";
+			m_pWinImage.sprite = m_pDrawSprite;
 		}
 		else
 		{
-			m_pWinText.text = "Player 2 Wins!";
+			m_pWinImage.sprite = m_pP2WinsSprite;
 		}
 
-		m_pWinText.text += "\n" + iP1Deaths + " to " + iP2Deaths + "!\n\nPress any key to play again.";
+		//m_pWinImage.text += "\n" + iP1Deaths + " to " + iP2Deaths + "!\n\nPress any key to play again.";
 
-		m_pWinText.gameObject.SetActive(true);
+		m_pWinImage.gameObject.SetActive(true);
 
-		m_pPlayer1Instance.gameObject.SetActive(false);
-		m_pPlayer2Instance.gameObject.SetActive(false);
+		m_pPlayer1Instance.IsActive = false;
+		m_pPlayer2Instance.IsActive = false;
 
 		StartCoroutine(SecurityBeforeCanRestartGame());
 	}
@@ -163,7 +170,7 @@ public class GameManager : MonoBehaviour
 	private IEnumerator SecurityBeforeCanRestartGame()
 	{
 		float fStartTime = Time.time;
-		while (Time.time - fStartTime < 0.5f)
+		while (Time.time - fStartTime < 2.0f)
 			yield return false;
 
 		m_bCanRestartGame = true;
