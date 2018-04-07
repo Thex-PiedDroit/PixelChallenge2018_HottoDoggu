@@ -12,6 +12,8 @@ public class Character : MonoBehaviour
 	public Animator m_pAnimator = null;
 	public SpriteRenderer m_pSpriteRenderer = null;
 
+	public SpriteRenderer m_pBlockFlash = null;
+
 	public float m_fAcceleration = 10.0f;
 	public float m_fMaxSpeed = 5.0f;
 
@@ -46,7 +48,6 @@ public class Character : MonoBehaviour
 	private bool m_bTimedBlock = false;
 
 	private bool m_bIsStunned = false;
-	private bool m_bStunnedThisFrame = false;
 	private bool m_bCanMove = true;
 	private bool m_bCanDash = true;
 	private bool m_bIsDead = false;
@@ -59,11 +60,6 @@ public class Character : MonoBehaviour
 		if (!m_bIsStunned && m_bActive)
 			CatchInputs();
 		UpdateAnimator();
-	}
-
-	private void LateUpdate()
-	{
-		m_bStunnedThisFrame = false;
 	}
 
 	private void CatchInputs()
@@ -115,6 +111,9 @@ public class Character : MonoBehaviour
 		m_bCanMove = false;
 		m_bCanDash = false;
 
+		m_pAnimator.ResetTrigger("Spin");
+		m_pAnimator.SetTrigger("Spin");
+
 		float fStartTime = Time.time;
 		while (Time.time - fStartTime < m_fDashDuration)
 		{
@@ -135,6 +134,7 @@ public class Character : MonoBehaviour
 	{
 		if (tDirection != Vector3.zero)
 			transform.forward = tDirection.normalized;
+
 		StartCoroutine(ElapseBlock());
 	}
 
@@ -168,7 +168,6 @@ public class Character : MonoBehaviour
 	private IEnumerator ElapseStun()
 	{
 		m_bIsStunned = true;
-		m_bStunnedThisFrame = true;
 
 		float fStartTime = Time.time;
 		while (Time.time - fStartTime < m_fBlockStunDuration)
@@ -181,7 +180,10 @@ public class Character : MonoBehaviour
 	{
 		bool bMoving = m_pRigidBody.velocity.sqrMagnitude > 0.1f;
 		m_pAnimator.SetBool("Moving", bMoving);
-		m_pSpriteRenderer.flipX = bMoving && m_pRigidBody.velocity.x < 0.0f;
+		m_pAnimator.SetBool("Block", m_bBlocking);
+
+		if (!m_bBlocking)
+			m_pSpriteRenderer.flipX = m_pRigidBody.velocity.x < 0.0f;
 	}
 
 	private void OnTriggerEnter(Collider pCollider)
@@ -207,23 +209,25 @@ public class Character : MonoBehaviour
 			if (!m_bCanMove)	// Means it's dashing -- for now
 			{
 				Vector3 tDirection = (pCollision.transform.position.x0z() - transform.position.x0z()).normalized;
-				pCollision.rigidbody.AddForce(tDirection * m_fDashPower, ForceMode.Impulse);
+				float fPower = m_fDashPower;
+				if (m_pEnemy.m_bIsStunned)
+				{
+					fPower = m_fBlockRetaliationPower;
+					m_pEnemy.Stun();
+				}
+				pCollision.rigidbody.AddForce(tDirection * fPower, ForceMode.Impulse);
 
 				StopAllCoroutines();
 				ResetConditions();
-			}
-
-			if (m_bIsStunned && !m_bStunnedThisFrame)
-			{
-				Vector3 tDirection = (transform.position.x0z() - pCollision.transform.position.x0z()).normalized;
-				m_pRigidBody.AddForce(tDirection * m_fBlockRetaliationPower, ForceMode.Impulse);
-				Stun();
 			}
 
 			if (m_bBlocking)
 			{
 				if (m_bTimedBlock)
 				{
+					m_pBlockFlash.flipX = m_pRigidBody.velocity.x > 0.0f;
+					m_pBlockFlash.gameObject.SetActive(true);
+
 					StopAllCoroutines();
 					ResetConditions();
 					pCollision.rigidbody.velocity = Vector3.zero;
