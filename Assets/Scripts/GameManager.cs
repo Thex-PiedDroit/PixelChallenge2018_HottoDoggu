@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
 	public Transform m_pCharactersContainer = null;
 	public Text m_pWinText = null;
+	public MainMenu m_pMainMenu = null;
+	public GameObject m_pPauseMenu = null;
 
 	public Character m_pPlayer1Prefab = null;
 	public Character m_pPlayer2Prefab = null;
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
 	private Dictionary<Character, CharacterStats> m_pCharactersStats = null;
 
 	private bool m_bCanRestartGame = false;
+	private bool m_bInGame = false;
 
 	#endregion
 
@@ -56,17 +59,17 @@ public class GameManager : MonoBehaviour
 			return;
 
 		m_pCharactersStats = new Dictionary<Character, CharacterStats>();
-	}
 
-	private void Start()
-	{
-		LaunchGame();
+		if (MainMenu.Instance == null)
+			m_pMainMenu.gameObject.SetActive(true);
 	}
 
 	private void Update()
 	{
 		if (m_bCanRestartGame && Input.anyKey)
 			LaunchGame();
+		else if (m_bInGame && Input.GetButtonDown("Escape"))
+			m_pPauseMenu.SetActive(true);
 	}
 
 	public void LaunchGame()
@@ -98,6 +101,7 @@ public class GameManager : MonoBehaviour
 			m_pPlayer2Instance.gameObject.SetActive(true);
 		}
 
+		m_bInGame = true;
 		StartCoroutine(ElapseGame());
 	}
 
@@ -125,6 +129,8 @@ public class GameManager : MonoBehaviour
 
 	private void FinishGame()
 	{
+		m_bInGame = false;
+
 		int iP1Deaths = m_pCharactersStats[m_pPlayer1Instance].m_iDeaths;
 		int iP2Deaths = m_pCharactersStats[m_pPlayer2Instance].m_iDeaths;
 
@@ -158,6 +164,15 @@ public class GameManager : MonoBehaviour
 			yield return false;
 
 		m_bCanRestartGame = true;
+	}
+
+	public void AbortGame()
+	{
+		m_bInGame = false;
+
+		StopAllCoroutines();
+		m_pPlayer1Instance.gameObject.SetActive(false);
+		m_pPlayer2Instance.gameObject.SetActive(false);
 	}
 
 
