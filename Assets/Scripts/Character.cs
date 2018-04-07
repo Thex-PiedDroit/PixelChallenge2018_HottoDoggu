@@ -158,6 +158,12 @@ public class Character : MonoBehaviour
 		m_bBlocking = false;
 	}
 
+	public void StunAndResetConditions()
+	{
+		ResetConditions();
+		Stun();
+	}
+
 	private void Stun()
 	{
 		StopAllCoroutines();

@@ -4224,7 +4224,7 @@ GameObject:
   - component: {fileID: 1300773628}
   - component: {fileID: 1300773627}
   - component: {fileID: 1300773626}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Cows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4287,6 +4287,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5caad093518af948b6a5cc146b2d111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_fTravelSpeed: 8
+  m_fInitPosX: 20
+  m_fDestinationX: -34
+  m_fMaxOffsetZ: 2
+  m_fPower: 80
 --- !u!1 &1339543238
 GameObject:
   m_ObjectHideFlags: 0
@@ -5512,6 +5517,10 @@ MonoBehaviour:
   - {fileID: 92981202}
   - {fileID: 2042685607}
   - {fileID: 1897275841}
+  m_pAllEvents:
+  - {fileID: 1300773628}
+  m_fSmallestRandomTimeBeforeEvent: 20
+  m_fBiggestRandomTimeBeforeEvent: 30
 --- !u!1 &1645369537
 GameObject:
   m_ObjectHideFlags: 0
