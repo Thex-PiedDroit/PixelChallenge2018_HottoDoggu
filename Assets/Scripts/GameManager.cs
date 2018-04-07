@@ -84,8 +84,8 @@ public class GameManager : MonoBehaviour
 			m_pPlayer1Instance = Instantiate(m_pPlayer1Prefab, m_tPlayer1SpawnPoint, Quaternion.Euler(Vector3.right), m_pCharactersContainer);
 			m_pPlayer2Instance = Instantiate(m_pPlayer2Prefab, m_tPlayer2SpawnPoint, Quaternion.Euler(-Vector3.right), m_pCharactersContainer);
 
-			m_pPlayer1Instance.m_pEnemy = m_pPlayer2Instance.transform;
-			m_pPlayer2Instance.m_pEnemy = m_pPlayer1Instance.transform;
+			m_pPlayer1Instance.m_pEnemy = m_pPlayer2Instance;
+			m_pPlayer2Instance.m_pEnemy = m_pPlayer1Instance;
 
 			m_pCharactersStats.Add(m_pPlayer1Instance, new CharacterStats());
 			m_pCharactersStats.Add(m_pPlayer2Instance, new CharacterStats());

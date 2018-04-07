@@ -56,7 +56,7 @@ public class PauseMenu : MonoBehaviour
 			m_bVerticalWasPressed = false;
 		}
 
-		if (Input.GetButtonDown("Escape"))
+		if (Input.GetButtonDown("Escape") || Input.GetButtonDown("Cancel"))
 		{
 			gameObject.SetActive(false);
 		}
