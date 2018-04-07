@@ -1,9 +1,12 @@
 ﻿
 using UnityEngine;
+using System.Collections;
 
 public class Character : MonoBehaviour
 {
 #region Variables (public)
+
+	public Transform m_pEnemy = null;
 
 	public Rigidbody m_pRigidBody = null;
 	public Animator m_pAnimator = null;
@@ -12,10 +15,12 @@ public class Character : MonoBehaviour
 	public float m_fAcceleration = 10.0f;
 	public float m_fMaxSpeed = 5.0f;
 
-	public float m_fAttackImpulseForce = 10.0f;
-	public float m_fRespawnImpactImpulseForce = 15.0f;
+	public float m_fDashSpeed = 15.0f;
+	public float m_fDashPower = 12.0f;
+	public float m_fDashDuration = 0.5f;
+	public float m_fAimAssistAngle = 30.0f;
 
-	public float m_fVelocitySlerpSpeed = 12.0f;
+	public float m_fRespawnImpactImpulseForce = 15.0f;
 
 	public int m_iCharacterID = 0;
 
@@ -23,7 +28,7 @@ public class Character : MonoBehaviour
 
 #region Variables (private)
 
-	private float m_fVelocityMagnitudeToClampTo = 0.0f;
+	private bool m_bCanMove = true;
 	private bool m_bIsDead = false;
 
 	#endregion
@@ -37,44 +42,50 @@ public class Character : MonoBehaviour
 
 	private void CatchInputs()
 	{
+		if (!m_bCanMove || transform.position.y < -0.05f)
+			return;
+
 		float fHorizontal = Input.GetAxis("Horizontal_" + m_iCharacterID);
 		float fVertical= Input.GetAxis("Vertical_" + m_iCharacterID);
 
 		Vector3 tDirection = new Vector3(fHorizontal, 0.0f, fVertical).normalized;
 
-		if (transform.position.y >= -0.05f && (fHorizontal != 0.0f || fVertical != 0.0f))
+		if (fHorizontal != 0.0f || fVertical != 0.0f)
 		{
 			if (m_bIsDead)
 				tDirection *= 0.2f;
 
-			if (m_pRigidBody.velocity.x0z().sqrMagnitude >= m_fMaxSpeed.Sqrd())
-			{
-				float fDot = Vector3.Dot(tDirection, m_pRigidBody.velocity);
-				if (fDot < 0.0f)
-				{
-					m_pRigidBody.AddForce(tDirection * m_fAcceleration);
-					m_fVelocityMagnitudeToClampTo = 0.0f;
-				}
-				else
-				{
-					float fMagnitude = m_pRigidBody.velocity.magnitude;
-					m_pRigidBody.AddForce(tDirection * m_fAcceleration);
-
-					if (m_fVelocityMagnitudeToClampTo != 0.0f)
-						m_pRigidBody.velocity = m_pRigidBody.velocity.normalized * m_fVelocityMagnitudeToClampTo;
-
-					m_fVelocityMagnitudeToClampTo = fMagnitude;
-				}
-			}
-			else
-			{
+			if (m_pRigidBody.velocity.x0z().sqrMagnitude < m_fMaxSpeed.Sqrd() || Vector3.Dot(tDirection, m_pRigidBody.velocity) < 0.0f)
 				m_pRigidBody.AddForce(tDirection * m_fAcceleration);
-				m_fVelocityMagnitudeToClampTo = 0.0f;
-			}
+			else
+				m_pRigidBody.AddForce((tDirection * m_fAcceleration) - m_pRigidBody.velocity);
 		}
 
 		if (!m_bIsDead && Input.GetButtonDown("Attack_" + m_iCharacterID))
-			m_pRigidBody.velocity = tDirection * m_fAttackImpulseForce;
+			Attack(tDirection);
+	}
+
+	private void Attack(Vector3 tDirection)
+	{
+		Vector3 tMeToTargetDirection = (m_pEnemy.position - transform.position).normalized;
+		if (Vector3.Angle(tDirection, tMeToTargetDirection) <= m_fAimAssistAngle * 0.5f)
+			tDirection = tMeToTargetDirection;
+
+		StartCoroutine(Dash(tDirection));
+	}
+
+	private IEnumerator Dash(Vector3 tDashDirection)
+	{
+		m_bCanMove = false;
+
+		float fStartTime = Time.time;
+		while (Time.time - fStartTime < m_fDashDuration)
+		{
+			m_pRigidBody.velocity = tDashDirection * m_fDashSpeed;
+			yield return false;
+		}
+
+		m_bCanMove = true;
 	}
 
 	private void UpdateAnimator()
@@ -102,10 +113,21 @@ public class Character : MonoBehaviour
 				pCollision.rigidbody.AddForce(tDirection * m_fRespawnImpactImpulseForce, ForceMode.Impulse);
 			}
 		}
+		else if (pCollision.gameObject.tag == "Character" && !m_bCanMove)	// "Can't move" means it's dashing -- for now
+		{
+			Vector3 tDirection = (pCollision.transform.position.x0z() - transform.position.x0z()).normalized;
+			pCollision.rigidbody.AddForce(tDirection * m_fDashPower, ForceMode.Impulse);
+
+			StopAllCoroutines();
+			m_bCanMove = true;
+		}
 	}
 
 	private void Die()
 	{
+		StopAllCoroutines();
+		m_bCanMove = true;
+
 		GameManager.Instance.RespawnMe(this);
 		m_bIsDead = true;
 	}

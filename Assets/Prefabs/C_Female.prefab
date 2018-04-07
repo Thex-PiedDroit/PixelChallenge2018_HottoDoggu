@@ -81,7 +81,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120095748666998}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -130,12 +130,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd8618d3ca6ee541b3758b11660b602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_pEnemy: {fileID: 0}
   m_pRigidBody: {fileID: 54130816194918940}
   m_pAnimator: {fileID: 95700314030187186}
   m_pSpriteRenderer: {fileID: 212990635642001226}
-  m_fAcceleration: 20
+  m_fAcceleration: 40
   m_fMaxSpeed: 5
-  m_fAttackImpulseForce: 10
+  m_fDashSpeed: 13
+  m_fDashPower: 8
+  m_fDashDuration: 0.3
+  m_fAimAssistAngle: 90
   m_fRespawnImpactImpulseForce: 12
   m_iCharacterID: 1
 --- !u!136 &136689169959784328
