@@ -1,17 +1,16 @@
 fileFormatVersion: 2
-guid: 40cfb48afccfc6d489fe2bf8e41ce75e
-timeCreated: 1523007519
+guid: ed74ba3fd30ee3c41bcc5511188b1ea5
+timeCreated: 1523044857
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
-    2100002: Prop
+    2100000: Calmar
     2300000: //RootNode
     3300000: //RootNode
-    4300000: SM_Cloud
+    4300000: SM_Octopus
   externalObjects: {}
   materials:
     importMaterials: 0

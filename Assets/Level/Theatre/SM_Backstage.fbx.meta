@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 40cfb48afccfc6d489fe2bf8e41ce75e
-timeCreated: 1523007519
+guid: 929f746408867c7429dbee9b121beffa
+timeCreated: 1523049598
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -8,13 +8,13 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: lambert1
-    2100002: Prop
     2300000: //RootNode
     3300000: //RootNode
-    4300000: SM_Cloud
+    4300000: polySurface4
+    4300002: pCube1
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -45,16 +45,16 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
-    weldVertices: 0
+    weldVertices: 1
     preserveHierarchy: 0
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -65,9 +65,9 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 0
+    tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

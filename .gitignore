@@ -5,6 +5,8 @@
 /[Bb]uilds/
 /Assets/AssetStoreTools*
 /_src/
+/AmplifyShaderEditor/
+/PostProcessing-2/
 
 # Visual Studio 2015 cache directory
 /.vs/

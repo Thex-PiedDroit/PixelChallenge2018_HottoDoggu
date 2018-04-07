@@ -1,17 +1,16 @@
 fileFormatVersion: 2
-guid: 40cfb48afccfc6d489fe2bf8e41ce75e
-timeCreated: 1523007519
+guid: 7e2d130da296ed24fb7c26439c93265a
+timeCreated: 1523039963
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
-    2100002: Prop
+    2100000: Prop
     2300000: //RootNode
     3300000: //RootNode
-    4300000: SM_Cloud
+    4300000: SM_Duck
   externalObjects: {}
   materials:
     importMaterials: 0

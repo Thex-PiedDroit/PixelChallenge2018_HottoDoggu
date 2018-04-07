@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 40cfb48afccfc6d489fe2bf8e41ce75e
-timeCreated: 1523007519
+guid: b43f1492625a781469cd241c8040100b
+timeCreated: 1523057996
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -8,10 +8,9 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: lambert1
-    2100002: Prop
     2300000: //RootNode
     3300000: //RootNode
-    4300000: SM_Cloud
+    4300000: SM_Seat
   externalObjects: {}
   materials:
     importMaterials: 0
