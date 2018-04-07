@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4566811514513226}
   - component: {fileID: 33308319077770584}
   - component: {fileID: 23304200089367266}
+  - component: {fileID: 65398562073163628}
   m_Layer: 0
   m_Name: SM_Seat
   m_TagString: Untagged
@@ -34,8 +35,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819609175372102}
-  m_LocalRotation: {x: -0, y: -0.08389752, z: -0, w: 0.9964744}
-  m_LocalPosition: {x: 7.84, y: -0.5, z: -9.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.2299995, y: -0.5, z: -9.869999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,3 +83,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819609175372102}
   m_Mesh: {fileID: 4300000, guid: b43f1492625a781469cd241c8040100b, type: 3}
+--- !u!65 &65398562073163628
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819609175372102}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8472595, y: 3.0319676, z: 1.504598}
+  m_Center: {x: 0, y: 0, z: 0}

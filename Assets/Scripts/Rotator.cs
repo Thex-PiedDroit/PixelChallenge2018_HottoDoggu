@@ -25,7 +25,7 @@ public class Rotator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Store the starting position & rotation of the object
-		posOffset = transform.position;
+		posOffset = transform.localPosition;
 	}
 
 	// Update is called once per frame
@@ -33,7 +33,7 @@ public class Rotator : MonoBehaviour {
 		// Spin object around Y-Axis
 		//transform.Rotate(new Vector3(0f, Time.deltaTime * degreesPerSecond, 0f), Space.World);
 	
-		// Float up/down with a Sin()
+		// Float up/down & left/right with a Sin()
 		tempPos = posOffset;
 		tempPos.x += Mathf.Sin (Time.fixedTime * Mathf.PI * frequencyX) * amplitudeX;
 		tempPos.y += Mathf.Sin (Time.fixedTime * Mathf.PI * frequencyY) * amplitudeY;
