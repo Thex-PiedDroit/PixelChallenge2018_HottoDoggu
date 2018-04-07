@@ -117,8 +117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8266c4cb49f9584e86fc452715931f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bLockYRotation: 0
   m_fMaxXRotation: 20
+  m_bLockYRotation: 0
+  m_bLocalUpIsAlwaysUp: 1
 --- !u!114 &114125866995683006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +142,11 @@ MonoBehaviour:
   m_fDashDuration: 0.3
   m_fDashCD: 1.5
   m_fAimAssistAngle: 90
+  m_fBlockDuration: 1
+  m_fTimedBlockWindow: 0.2
+  m_fBlockClampedSpeed: 3
+  m_fBlockStunDuration: 1
+  m_fBlockRetaliationPower: 80
   m_fRespawnImpactImpulseForce: 12
   m_iCharacterID: 1
 --- !u!136 &136689169959784328
