@@ -66,6 +66,8 @@ public class GameManager : MonoBehaviour
 
 		if (MainMenu.Instance == null)
 			m_pMainMenu.gameObject.SetActive(true);
+
+		AudioManager.Instance.PlaySound("MenuMusic", AudioManager.Instance.m_pMusicSource, true);
 	}
 
 	private void Update()
@@ -78,6 +80,8 @@ public class GameManager : MonoBehaviour
 
 	public void LaunchGame()
 	{
+		AudioManager.Instance.PlaySound("GameMusic", AudioManager.Instance.m_pMusicSource);
+
 		m_bCanRestartGame = false;
 		m_pWinImage.gameObject.SetActive(false);
 
@@ -141,6 +145,8 @@ public class GameManager : MonoBehaviour
 
 	private void FinishGame()
 	{
+		AudioManager.Instance.PlaySound("MenuMusic", AudioManager.Instance.m_pMusicSource, true);
+
 		m_bInGame = false;
 
 		int iP1Deaths = m_pCharactersStats[m_pPlayer1Instance].m_iDeaths;
@@ -180,6 +186,8 @@ public class GameManager : MonoBehaviour
 
 	public void AbortGame()
 	{
+		AudioManager.Instance.PlaySound("MenuMusic", AudioManager.Instance.m_pMusicSource, true);
+
 		m_bInGame = false;
 
 		StopAllCoroutines();

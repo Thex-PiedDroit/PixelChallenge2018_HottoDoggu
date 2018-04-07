@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
 			m_pSoundsDictionary.Add(m_pAllSounds[i].m_sSoundKey, m_pAllSounds[i].m_pClips.Clone());
 	}
 
-	public void PlaySound(string sSoundKey, AudioSource pSource, bool bRandomizePitch = false, float fRandomRange = 0.3f)
+	public void PlaySound(string sSoundKey, AudioSource pSource, bool bLoop = false, bool bRandomizePitch = false, float fRandomRange = 0.3f)
 	{
 		if (!m_pSoundsDictionary.ContainsKey(sSoundKey))
 			return;
@@ -43,6 +43,8 @@ public class AudioManager : MonoBehaviour
 
 		List<AudioClip> pAllSounds = m_pSoundsDictionary[sSoundKey];
 		pSource.clip = pAllSounds[Random.Range(0, pAllSounds.Count)];
+
+		pSource.loop = bLoop;
 		pSource.Play();
 	}
 }

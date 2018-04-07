@@ -119,6 +119,8 @@ public class Character : MonoBehaviour
 
 	private IEnumerator Dash(Vector3 tDashDirection)
 	{
+		AudioManager.Instance.PlaySound("Spin", m_pAudioSource);
+
 		m_bCanMove = false;
 		m_bCanDash = false;
 
@@ -151,6 +153,8 @@ public class Character : MonoBehaviour
 
 	private IEnumerator ElapseBlock()
 	{
+		AudioManager.Instance.PlaySound("Impact" + m_sName, m_pAudioSource);
+
 		m_bBlocking = true;
 		m_bTimedBlock = true;
 
@@ -212,7 +216,7 @@ public class Character : MonoBehaviour
 	private void OnCollisionEnter(Collision pCollision)
 	{
 		if (pCollision.gameObject.tag == "Character")
-			AudioManager.Instance.PlaySound("Collision_" + m_sName, m_pAudioSource);
+			AudioManager.Instance.PlaySound("Impact", m_pAudioSource);
 
 		if (m_bIsDead)
 		{
