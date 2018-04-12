@@ -4,7 +4,10 @@ using System.Collections;
 
 public class Cows : GameEvent
 {
-#region Variables (public)
+	#region Variables (public)
+
+	public AudioSource m_pAudioSourceMoo = null;
+	public AudioSource m_pAudioSourceGallop = null;
 
 	public float m_fTravelSpeed = 8.0f;
 
@@ -30,6 +33,8 @@ public class Cows : GameEvent
 
 	public override void LaunchEvent()
 	{
+		AudioManager.Instance.PlaySound("Cow_Moo", m_pAudioSourceMoo, true);
+		AudioManager.Instance.PlaySound("Cow_Gallop", m_pAudioSourceGallop, true);
 		StartCoroutine(Travel());
 	}
 
