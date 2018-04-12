@@ -220,6 +220,7 @@ public class Character : MonoBehaviour
 		bool bMoving = m_pRigidBody.velocity.sqrMagnitude > 0.1f;
 		m_pAnimator.SetBool("Moving", bMoving);
 		m_pAnimator.SetBool("Block", m_bBlocking);
+		m_pAnimator.SetBool("Stun", m_bIsStunned);
 
 		if (!m_bBlocking)
 			m_pSpriteRenderer.flipX = m_pRigidBody.velocity.x < 0.0f;
@@ -308,6 +309,8 @@ public class Character : MonoBehaviour
 
 	private void Taunt()
 	{
+		m_bActive = false;
+
 		m_pAnimator.SetTrigger("Taunt");
 		AudioManager.Instance.PlaySound("Taunt_" + m_sName, m_pTauntsAudioSource);
 
