@@ -1696,6 +1696,20 @@ MonoBehaviour:
   - m_sSoundKey: MenuMusic
     m_pClips:
     - {fileID: 8300000, guid: eb5687cb3b397994baf0bf3a54f8d83c, type: 3}
+  - m_sSoundKey: FootSteps_M
+    m_pClips:
+    - {fileID: 8300000, guid: f5381b82e317c46fe80cc950f8a06e68, type: 3}
+    - {fileID: 8300000, guid: b1736d818feeb47f2b810454f39367ef, type: 3}
+    - {fileID: 8300000, guid: 470f6d7fe16ab47b6be5ea0ee75eebdb, type: 3}
+    - {fileID: 8300000, guid: a4735e29b404048f5890708f4e14e588, type: 3}
+    - {fileID: 8300000, guid: b1a43875d81794ea48f18ee22991f7ab, type: 3}
+  - m_sSoundKey: FootSteps_F
+    m_pClips:
+    - {fileID: 8300000, guid: 22ef6179aaf5645e1a78f2bb023a08d3, type: 3}
+    - {fileID: 8300000, guid: c0ae137e70d6b4ce98a51cdf93e72534, type: 3}
+    - {fileID: 8300000, guid: 736e210f7ea934a1eb35112637f64927, type: 3}
+    - {fileID: 8300000, guid: 816f06d9c2e444fc1aa6e89d07c04b75, type: 3}
+    - {fileID: 8300000, guid: 73834f22759684ccfa60dce27ea0799a, type: 3}
 --- !u!1 &459621434
 GameObject:
   m_ObjectHideFlags: 0

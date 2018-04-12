@@ -15,7 +15,6 @@ public class Character : MonoBehaviour
 	public SpriteRenderer m_pBlockFlash = null;
 
 	public AudioSource m_pAudioSource = null;
-	public AudioSource m_pFootStepsAudioSource = null;
 
 	public float m_fAcceleration = 10.0f;
 	public float m_fMaxSpeed = 5.0f;
@@ -41,6 +40,10 @@ public class Character : MonoBehaviour
 #region Variables (private)
 
 	private string m_sName = null;
+	public string CharacterName
+	{
+		get { return m_sName; }
+	}
 
 	static private bool s_bGameIsPaused = false;
 	static public bool GameIsPaused
@@ -292,10 +295,5 @@ public class Character : MonoBehaviour
 
 		GameManager.Instance.RespawnMe(this);
 		m_bIsDead = true;
-	}
-
-	public void PlayFootStep()
-	{
-		AudioManager.Instance.PlaySound("FootSteps_" + m_sName, m_pFootStepsAudioSource);
 	}
 }
