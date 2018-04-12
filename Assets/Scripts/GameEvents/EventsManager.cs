@@ -44,6 +44,11 @@ public class EventsManager : MonoBehaviour
 		StartCoroutine(LaunchEvents());
 	}
 
+	public void CancelEvents()
+	{
+		StopAllCoroutines();
+	}
+
 	private IEnumerator GroundShakersLoop()
 	{
 		float fStartTime = Time.time;

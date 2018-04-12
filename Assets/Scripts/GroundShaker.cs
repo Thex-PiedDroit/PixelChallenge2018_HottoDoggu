@@ -21,6 +21,7 @@ public class GroundShaker : MonoBehaviour
 
 	public void Reset()
 	{
+		gameObject.SetActive(true);
 		m_pAnimator.SetTrigger("Reset");
 	}
 
@@ -37,5 +38,10 @@ public class GroundShaker : MonoBehaviour
 			yield return false;
 
 		m_pAnimator.SetTrigger("Fall");
+	}
+
+	public void Disable()
+	{
+		gameObject.SetActive(false);
 	}
 }

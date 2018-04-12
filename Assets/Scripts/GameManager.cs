@@ -138,10 +138,16 @@ public class GameManager : MonoBehaviour
 
 		pMe.m_pRigidBody.velocity = Vector3.zero;
 
-		float fRandX = Random.Range(-m_tRespawnRectangleExtent.x * 0.5f, m_tRespawnRectangleExtent.x * 0.5f);
-		float fRandZ = Random.Range(-m_tRespawnRectangleExtent.y * 0.5f, m_tRespawnRectangleExtent.y * 0.5f);
+		Vector3 tRespawnPos = Vector3.zero;
 
-		Vector3 tRespawnPos = new Vector3(fRandX, m_fRespawnHeight, fRandZ) + m_tRespawnRectanglePos.xzy();
+		do
+		{
+			float fRandX = Random.Range(-m_tRespawnRectangleExtent.x * 0.5f, m_tRespawnRectangleExtent.x * 0.5f);
+			float fRandZ = Random.Range(-m_tRespawnRectangleExtent.y * 0.5f, m_tRespawnRectangleExtent.y * 0.5f);
+
+			tRespawnPos = new Vector3(fRandX, m_fRespawnHeight, fRandZ) + m_tRespawnRectanglePos.xzy();
+		} while (!Physics.Raycast(tRespawnPos, Vector3.down, m_fRespawnHeight + 0.5f, LayerMask.GetMask("Floor")));
+
 		pMe.transform.position = tRespawnPos;
 	}
 
@@ -195,6 +201,8 @@ public class GameManager : MonoBehaviour
 		StopAllCoroutines();
 		m_pPlayer1Instance.IsActive = false;
 		m_pPlayer2Instance.IsActive = false;
+
+		EventsManager.Instance.CancelEvents();
 	}
 
 
