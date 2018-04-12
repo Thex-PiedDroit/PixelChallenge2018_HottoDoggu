@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 54130816194918940}
   - component: {fileID: 136689169959784328}
   - component: {fileID: 82217842546160696}
-  - component: {fileID: 82495872409477710}
   m_Layer: 12
   m_Name: C_Female
   m_TagString: Character
@@ -41,7 +40,9 @@ GameObject:
   - component: {fileID: 4737545962177240}
   - component: {fileID: 212990635642001226}
   - component: {fileID: 95700314030187186}
+  - component: {fileID: 114675743063441962}
   - component: {fileID: 114074153267016788}
+  - component: {fileID: 82534609416723958}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -178,7 +179,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -202,19 +203,19 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!82 &82495872409477710
+    m_RotationOrder: 0
+--- !u!82 &82534609416723958
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1120095748666998}
+  m_GameObject: {fileID: 1541947030360766}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -258,7 +259,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -282,7 +283,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!95 &95222060632338820
 Animator:
   serializedVersion: 3
@@ -348,7 +349,6 @@ MonoBehaviour:
   m_pSpriteRenderer: {fileID: 212990635642001226}
   m_pBlockFlash: {fileID: 212520236645437638}
   m_pAudioSource: {fileID: 82217842546160696}
-  m_pFootStepsAudioSource: {fileID: 82495872409477710}
   m_fAcceleration: 40
   m_fMaxSpeed: 5
   m_fDashSpeed: 13
@@ -374,6 +374,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b635509e4f1119b43923ae21127b3449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114675743063441962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1541947030360766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b614e43cfb76baf4baa81af045047f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pMaster: {fileID: 114125866995683006}
+  m_pAudioSource: {fileID: 82534609416723958}
 --- !u!136 &136689169959784328
 CapsuleCollider:
   m_ObjectHideFlags: 1
