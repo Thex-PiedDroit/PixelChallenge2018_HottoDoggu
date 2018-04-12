@@ -24,6 +24,7 @@ public class CharacterFootStepActivator : MonoBehaviour
 
 	public void LaunchFootStepSound()
 	{
-		AudioManager.Instance.PlaySound("FootSteps_" + m_sName, m_pAudioSource, false, true, 0.1f);
+		if (Physics.Raycast(m_pMaster.transform.position, Vector3.down, 0.1f, LayerMask.GetMask("Floor")))
+			AudioManager.Instance.PlaySound("FootSteps_" + m_sName, m_pAudioSource, false, true, 0.1f);
 	}
 }
