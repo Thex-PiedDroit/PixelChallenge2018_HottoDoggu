@@ -33,7 +33,7 @@ public class Cows : GameEvent
 
 	public override void LaunchEvent()
 	{
-		AudioManager.Instance.PlaySound("Cow_Moo", m_pAudioSourceMoo, true);
+		AudioManager.Instance.PlaySound("Cow_Moo", m_pAudioSourceMoo);
 		AudioManager.Instance.PlaySound("Cow_Gallop", m_pAudioSourceGallop, true);
 		StartCoroutine(Travel());
 	}
