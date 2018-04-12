@@ -25,12 +25,15 @@ public class PauseMenu : MonoBehaviour
 		SetSelection(0);
 		Time.timeScale = 0.0f;
 
+		Character.GameIsPaused = true;
+
 		m_bVerticalWasPressed = Input.GetButton("MenuVertical");
 	}
 
 	private void OnDisable()
 	{
 		Time.timeScale = 1.0f;
+		Character.GameIsPaused = false;
 	}
 
 	private void Update()

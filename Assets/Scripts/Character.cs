@@ -42,6 +42,12 @@ public class Character : MonoBehaviour
 
 	private string m_sName = null;
 
+	static private bool s_bGameIsPaused = false;
+	static public bool GameIsPaused
+	{
+		set { s_bGameIsPaused = value; }
+	}
+
 	private bool m_bActive = true;
 	public bool IsActive
 	{
@@ -68,7 +74,7 @@ public class Character : MonoBehaviour
 
 	private void Update()
 	{
-		if (!m_bIsStunned && m_bActive)
+		if (!m_bIsStunned && m_bActive && !s_bGameIsPaused)
 			CatchInputs();
 		UpdateAnimator();
 	}
@@ -79,7 +85,7 @@ public class Character : MonoBehaviour
 			return;
 
 		float fHorizontal = Input.GetAxis("Horizontal_" + m_iCharacterID);
-		float fVertical= Input.GetAxis("Vertical_" + m_iCharacterID);
+		float fVertical = Input.GetAxis("Vertical_" + m_iCharacterID);
 
 		Vector3 tDirection = new Vector3(fHorizontal, 0.0f, fVertical).normalized;
 
