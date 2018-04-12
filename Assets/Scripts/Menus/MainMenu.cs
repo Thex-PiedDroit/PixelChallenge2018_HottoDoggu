@@ -59,7 +59,7 @@ public class MainMenu : MonoBehaviour
 				HandleVerticalInput();
 			}
 		}
-		else if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("Cancel"))
+		else if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("Escape"))
 		{
 			m_pControlsScreen.SetActive(false);
 		}

@@ -43,7 +43,7 @@ public class PauseMenu : MonoBehaviour
 	{
 		if (!m_pControlsScreen.activeSelf)
 			CatchPauseInputs();
-		else if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("Cancel"))
+		else if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("Escape"))
 			m_pControlsScreen.SetActive(false);
 	}
 
