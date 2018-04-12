@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 
 	public GameObject m_pLaunchGameSelect = null;
 	public GameObject m_pControlsSelect = null;
+	public GameObject m_pQuitSelect = null;
 
 	public GameObject m_pControlsScreen = null;
 
@@ -39,14 +40,18 @@ public class MainMenu : MonoBehaviour
 		{
 			if (Input.GetButtonDown("Submit"))
 			{
-				if (m_iCurrentSelection == 0)
+				switch (m_iCurrentSelection)
 				{
-					GameManager.Instance.LaunchGame();
-					gameObject.SetActive(false);
-				}
-				else
-				{
-					m_pControlsScreen.SetActive(true);
+					case 0:
+						GameManager.Instance.LaunchGame();
+						gameObject.SetActive(false);
+						break;
+					case 1:
+						m_pControlsScreen.SetActive(true);
+						break;
+					case 2:
+						Application.Quit();
+						break;
 				}
 			}
 			else
@@ -71,9 +76,9 @@ public class MainMenu : MonoBehaviour
 				m_bVerticalWasPressed = true;
 
 				int iSelection = m_iCurrentSelection + (fVertical > 0.0f ? 1 : -1);
-				iSelection %= 2;
+				iSelection %= 3;
 				if (iSelection < 0)
-					iSelection = 1;
+					iSelection = 2;
 
 				SetSelection(iSelection);
 			}
@@ -90,5 +95,6 @@ public class MainMenu : MonoBehaviour
 
 		m_pLaunchGameSelect.SetActive(m_iCurrentSelection == 0);
 		m_pControlsSelect.SetActive(m_iCurrentSelection == 1);
+		m_pQuitSelect.SetActive(m_iCurrentSelection == 2);
 	}
 }

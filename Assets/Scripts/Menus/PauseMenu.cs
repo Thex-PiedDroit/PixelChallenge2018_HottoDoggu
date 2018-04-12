@@ -7,7 +7,10 @@ public class PauseMenu : MonoBehaviour
 
 	public GameObject m_pResumeSelect = null;
 	public GameObject m_pBackToMenuSelect = null;
+	public GameObject m_pControlsSelect = null;
 	public GameObject m_pQuitSelect = null;
+
+	public GameObject m_pControlsScreen = null;
 
 	#endregion
 
@@ -38,6 +41,14 @@ public class PauseMenu : MonoBehaviour
 
 	private void Update()
 	{
+		if (!m_pControlsScreen.activeSelf)
+			CatchPauseInputs();
+		else if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("Cancel"))
+			m_pControlsScreen.SetActive(false);
+	}
+
+	private void CatchPauseInputs()
+	{
 		float fVertical = Input.GetAxisRaw("MenuVertical");
 
 		if (fVertical != 0.0f)
@@ -47,9 +58,9 @@ public class PauseMenu : MonoBehaviour
 				m_bVerticalWasPressed = true;
 
 				int iSelection = m_iCurrentSelection + (fVertical > 0.0f ? 1 : -1);
-				iSelection %= 3;
+				iSelection %= 4;
 				if (iSelection < 0)
-					iSelection = 2;
+					iSelection = 3;
 
 				SetSelection(iSelection);
 			}
@@ -76,6 +87,9 @@ public class PauseMenu : MonoBehaviour
 					gameObject.SetActive(false);
 					break;
 				case 2:
+					m_pControlsScreen.SetActive(true);
+					break;
+				case 3:
 					Application.Quit();
 					break;
 			}
@@ -88,6 +102,7 @@ public class PauseMenu : MonoBehaviour
 
 		m_pResumeSelect.SetActive(m_iCurrentSelection == 0);
 		m_pBackToMenuSelect.SetActive(m_iCurrentSelection == 1);
-		m_pQuitSelect.SetActive(m_iCurrentSelection == 2);
+		m_pControlsSelect.SetActive(m_iCurrentSelection == 2);
+		m_pQuitSelect.SetActive(m_iCurrentSelection == 3);
 	}
 }
