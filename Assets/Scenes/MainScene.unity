@@ -176,7 +176,7 @@ RectTransform:
   m_Children:
   - {fileID: 661226995}
   m_Father: {fileID: 992899747}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1089,6 +1089,39 @@ Transform:
   m_PrefabParentObject: {fileID: 4678878258143092, guid: e12a955ec189f6b49a6a4651c01c32ce,
     type: 2}
   m_PrefabInternal: {fileID: 295500044}
+--- !u!1 &297144160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 297144161}
+  m_Layer: 5
+  m_Name: TauntIcons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &297144161
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 297144160}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 992899747}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -945.9144, y: -541.34326}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &359155493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,49 +1587,6 @@ MonoBehaviour:
     - {fileID: 8300000, guid: bc4f2a8582a2f44f196b810cb18bed65, type: 3}
     - {fileID: 8300000, guid: d3df8cb6d98fc45599bf8d43821c3fc1, type: 3}
     - {fileID: 8300000, guid: 802e808e4feb94b549842babfd666321, type: 3}
-  - m_sSoundKey: Victory_F
-    m_pClips:
-    - {fileID: 0}
-  - m_sSoundKey: Victory_M
-    m_pClips:
-    - {fileID: 0}
-  - m_sSoundKey: Collision_F
-    m_pClips:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - m_sSoundKey: Collision_M
-    m_pClips:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - m_sSoundKey: Crowd_Applause
-    m_pClips:
-    - {fileID: 0}
-  - m_sSoundKey: Crowd_Loop
-    m_pClips:
-    - {fileID: 0}
-  - m_sSoundKey: Crowd_Boo
-    m_pClips:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - m_sSoundKey: Crowd_Cheer
-    m_pClips:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
   - m_sSoundKey: UI_Select
     m_pClips:
     - {fileID: 8300000, guid: bbbe0cdcc217b44ad882239609c64efa, type: 3}
@@ -1605,34 +1595,12 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 48db702210d284a34a10e495f4f5f4a3, type: 3}
     - {fileID: 8300000, guid: eaa52ce7cf10d478d8c8be71c0e605ab, type: 3}
     - {fileID: 8300000, guid: f40f47dc8b8884db28d019a8caa04415, type: 3}
-  - m_sSoundKey: UFO_In
-    m_pClips:
-    - {fileID: 0}
-    - {fileID: 0}
-  - m_sSoundKey: UFO_Out
-    m_pClips:
-    - {fileID: 0}
-    - {fileID: 0}
-  - m_sSoundKey: Octopus_Loop
-    m_pClips:
-    - {fileID: 0}
-  - m_sSoundKey: Octopus_Attack
-    m_pClips:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
   - m_sSoundKey: Piano_Crash
     m_pClips:
     - {fileID: 8300000, guid: 8699cd7cf25d845ba80c889c6595038e, type: 3}
   - m_sSoundKey: Flame_Loop
     m_pClips:
     - {fileID: 8300000, guid: a5f4d2b5d334b4442befe6dc65440092, type: 3}
-  - m_sSoundKey: Fruit_Impact
-    m_pClips:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
   - m_sSoundKey: Cow_Moo
     m_pClips:
     - {fileID: 8300000, guid: b151fed5ebca34e469c811598cfbb7a6, type: 3}
@@ -1644,36 +1612,12 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 8bc42e77c27804f81b563b7a05c29111, type: 3}
     - {fileID: 8300000, guid: 4a72d954391b54cb792cf58d8be1a6cd, type: 3}
     - {fileID: 8300000, guid: 7f5ea209d2881413f8e7582030c0a35a, type: 3}
-  - m_sSoundKey: Countdown_In
-    m_pClips:
-    - {fileID: 0}
-  - m_sSoundKey: Countdown_05
-    m_pClips:
-    - {fileID: 0}
-  - m_sSoundKey: Countdown_04
-    m_pClips:
-    - {fileID: 0}
-  - m_sSoundKey: Countdown_03
-    m_pClips:
-    - {fileID: 0}
-  - m_sSoundKey: Countdown_02
-    m_pClips:
-    - {fileID: 0}
-  - m_sSoundKey: Countdown_01
-    m_pClips:
-    - {fileID: 0}
-  - m_sSoundKey: Countdown_00
-    m_pClips:
-    - {fileID: 0}
-  - m_sSoundKey: Duck
-    m_pClips:
-    - {fileID: 0}
-  - m_sSoundKey: Death_F
+  - m_sSoundKey: Death_M
     m_pClips:
     - {fileID: 8300000, guid: c39ac032b33964ff8be056b569dd4cdf, type: 3}
     - {fileID: 8300000, guid: 8692607a828fa45abaed3faf30a42b6d, type: 3}
     - {fileID: 8300000, guid: 34d2bdf187155453aad4212718faa6ea, type: 3}
-  - m_sSoundKey: Death_M
+  - m_sSoundKey: Death_F
     m_pClips:
     - {fileID: 8300000, guid: fb8bec9a7bd624d2fa2c65a7b6ae7ae3, type: 3}
     - {fileID: 8300000, guid: 4cf7f3da5d42341e581866dd246e93e9, type: 3}
@@ -1684,9 +1628,6 @@ MonoBehaviour:
   - m_sSoundKey: Fire_Projectile
     m_pClips:
     - {fileID: 8300000, guid: 02338762a225640f597b2db7ed834570, type: 3}
-  - m_sSoundKey: Countdown_Start
-    m_pClips:
-    - {fileID: 0}
   - m_sSoundKey: Floor_Crack
     m_pClips:
     - {fileID: 8300000, guid: 9eee5e7b23323fa4493de7ca7bd401c0, type: 3}
@@ -1696,14 +1637,14 @@ MonoBehaviour:
   - m_sSoundKey: MenuMusic
     m_pClips:
     - {fileID: 8300000, guid: eb5687cb3b397994baf0bf3a54f8d83c, type: 3}
-  - m_sSoundKey: FootSteps_M
+  - m_sSoundKey: FootSteps_F
     m_pClips:
     - {fileID: 8300000, guid: f5381b82e317c46fe80cc950f8a06e68, type: 3}
     - {fileID: 8300000, guid: b1736d818feeb47f2b810454f39367ef, type: 3}
     - {fileID: 8300000, guid: 470f6d7fe16ab47b6be5ea0ee75eebdb, type: 3}
     - {fileID: 8300000, guid: a4735e29b404048f5890708f4e14e588, type: 3}
     - {fileID: 8300000, guid: b1a43875d81794ea48f18ee22991f7ab, type: 3}
-  - m_sSoundKey: FootSteps_F
+  - m_sSoundKey: FootSteps_M
     m_pClips:
     - {fileID: 8300000, guid: 22ef6179aaf5645e1a78f2bb023a08d3, type: 3}
     - {fileID: 8300000, guid: c0ae137e70d6b4ce98a51cdf93e72534, type: 3}
@@ -3427,6 +3368,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 297144161}
   - {fileID: 2014109913}
   - {fileID: 33771042}
   - {fileID: 1482577775}
@@ -5743,7 +5685,7 @@ RectTransform:
   - {fileID: 1133503056}
   - {fileID: 1496136123}
   m_Father: {fileID: 992899747}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6081,7 +6023,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -6105,7 +6047,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!82 &1582577982
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6161,7 +6103,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -6185,7 +6127,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!82 &1582577983
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6241,7 +6183,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -6265,7 +6207,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!1 &1585963773 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1094767492409048, guid: 91c1c5e8e8fb48a4d9cb7a79f94a1082,
@@ -7134,6 +7076,7 @@ MonoBehaviour:
   m_pCharactersContainer: {fileID: 1738967829}
   m_pMainMenu: {fileID: 33771043}
   m_pPauseMenu: {fileID: 1482577774}
+  m_pTauntIconsContainer: {fileID: 297144161}
   m_pWinImage: {fileID: 2014109911}
   m_pP1WinsSprite: {fileID: 21300000, guid: 7716f7416e82f6748abf0c90febfd452, type: 3}
   m_pP2WinsSprite: {fileID: 21300000, guid: c728f8513cffb3c4da526367d86435c2, type: 3}
@@ -7610,7 +7553,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 992899747}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}

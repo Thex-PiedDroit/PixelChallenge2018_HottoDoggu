@@ -8,6 +8,9 @@ public class Character : MonoBehaviour
 
 	public Character m_pEnemy = null;
 
+	public TauntIcon m_pTauntIconPrefab = null;
+	public Transform m_pTauntFollowPoint = null;
+
 	public Rigidbody m_pRigidBody = null;
 	public Animator m_pAnimator = null;
 	public SpriteRenderer m_pSpriteRenderer = null;
@@ -15,6 +18,7 @@ public class Character : MonoBehaviour
 	public SpriteRenderer m_pBlockFlash = null;
 
 	public AudioSource m_pAudioSource = null;
+	public AudioSource m_pTauntsAudioSource = null;
 
 	public float m_fAcceleration = 10.0f;
 	public float m_fMaxSpeed = 5.0f;
@@ -37,7 +41,9 @@ public class Character : MonoBehaviour
 
 	#endregion
 
-#region Variables (private)
+	#region Variables (private)
+
+	private TauntIcon m_pTauntIcon = null;
 
 	private string m_sName = null;
 	public string CharacterName
@@ -115,6 +121,9 @@ public class Character : MonoBehaviour
 
 		if (!m_bIsDead && Input.GetButtonDown("Block_" + m_iCharacterID))
 			Block(tDirection);
+
+		if (Input.GetButtonDown("Taunt_" + m_iCharacterID))
+			Taunt();
 	}
 
 	private void Attack(Vector3 tDirection)
@@ -295,5 +304,16 @@ public class Character : MonoBehaviour
 
 		GameManager.Instance.RespawnMe(this);
 		m_bIsDead = true;
+	}
+
+	private void Taunt()
+	{
+		m_pAnimator.SetTrigger("Taunt");
+		AudioManager.Instance.PlaySound("Taunt_" + m_sName, m_pTauntsAudioSource);
+
+		if (m_pTauntIcon == null)
+			m_pTauntIcon = Instantiate(m_pTauntIconPrefab, GameManager.Instance.m_pTauntIconsContainer);
+
+		m_pTauntIcon.Init(m_pTauntFollowPoint);
 	}
 }
