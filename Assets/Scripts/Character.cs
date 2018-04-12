@@ -94,7 +94,11 @@ public class Character : MonoBehaviour
 			return;
 
 		float fHorizontal = Input.GetAxis("Horizontal_" + m_iCharacterID);
+		if (fHorizontal.Sqrd() <= 0.15f.Sqrd())
+			fHorizontal = 0.0f;
 		float fVertical = Input.GetAxis("Vertical_" + m_iCharacterID);
+		if (fVertical.Sqrd() <= 0.15f.Sqrd())
+			fVertical = 0.0f;
 
 		Vector3 tDirection = new Vector3(fHorizontal, 0.0f, fVertical).normalized;
 
@@ -302,6 +306,7 @@ public class Character : MonoBehaviour
 
 		StopAllCoroutines();
 		ResetConditions();
+		m_bActive = true;
 
 		GameManager.Instance.RespawnMe(this);
 		m_bIsDead = true;
