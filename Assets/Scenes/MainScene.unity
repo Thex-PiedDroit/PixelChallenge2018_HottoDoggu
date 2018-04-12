@@ -130,7 +130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &33771040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e5121467053609749b365fe5a66a0861, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f36c2f56bb16014cafd8c0bea794809, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -174,7 +174,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 967204623}
   - {fileID: 661226995}
   m_Father: {fileID: 992899747}
   m_RootOrder: 1
@@ -1554,47 +1553,47 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 802e808e4feb94b549842babfd666321, type: 3}
   - m_sSoundKey: Victory_F
     m_pClips:
-    - {fileID: 8300000, guid: b5bbbe2ceec644740bf6c39c8f24a9d6, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Victory_M
     m_pClips:
-    - {fileID: 8300000, guid: c1635f70e96ea4737ad456dc45deba49, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Collision_F
     m_pClips:
-    - {fileID: 8300000, guid: 102fbbe30b0c643c2bdf2083e89dd8bc, type: 3}
-    - {fileID: 8300000, guid: 070e160da5e814e4dbf2c18537a93ea8, type: 3}
-    - {fileID: 8300000, guid: 05071f9ace3a34892b86a65bed72361a, type: 3}
-    - {fileID: 8300000, guid: 7d20083c49c9a4a5cbb18748e1598c8f, type: 3}
-    - {fileID: 8300000, guid: 956bae0227d0440ceba4d9c7b738ef04, type: 3}
-    - {fileID: 8300000, guid: 1ecc9baf53276425dba1b738200994db, type: 3}
-    - {fileID: 8300000, guid: 82c1ea158e4d34ee7828af866434be55, type: 3}
-    - {fileID: 8300000, guid: b8b6670409ee94e6dac7070c821bfbf6, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - m_sSoundKey: Collision_M
     m_pClips:
-    - {fileID: 8300000, guid: 041a2fad1dc184cf58a75622e71db13d, type: 3}
-    - {fileID: 8300000, guid: f4a06b19bd36140889c35bfd1e437f5d, type: 3}
-    - {fileID: 8300000, guid: 0aaa5814f610b4c47bdbde1c24b712d3, type: 3}
-    - {fileID: 8300000, guid: 6b3e449ba715a4334af98924306226bd, type: 3}
-    - {fileID: 8300000, guid: 838da8c5d08a34f44a39402f523e6d1c, type: 3}
-    - {fileID: 8300000, guid: c850d27fce8c742c99ae69b28e6660bd, type: 3}
-    - {fileID: 8300000, guid: 8f8e5d5f591a242f8944439eec404206, type: 3}
-    - {fileID: 8300000, guid: 0e7e81f546d4a441dab7433922745e62, type: 3}
-    - {fileID: 8300000, guid: c5c5d9a91fca944e89d56f098d38a965, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - m_sSoundKey: Crowd_Applause
     m_pClips:
-    - {fileID: 8300000, guid: 16b4cba7be2bd4ceea54ef4e26298992, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Crowd_Loop
     m_pClips:
-    - {fileID: 8300000, guid: 7c77f5aee5dc44202b57d96225f7c820, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Crowd_Boo
     m_pClips:
-    - {fileID: 8300000, guid: 2c791197b5c654739891c44831e02614, type: 3}
-    - {fileID: 8300000, guid: 6e456900aa48f41b4a0277415f3147af, type: 3}
-    - {fileID: 8300000, guid: e7012e334325746d39daaf74cf27fffe, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - m_sSoundKey: Crowd_Cheer
     m_pClips:
-    - {fileID: 8300000, guid: b8e2542c9e5f246d0a5c51c0e24b839b, type: 3}
-    - {fileID: 8300000, guid: 15a912a094fb74f21bed338562b979dc, type: 3}
-    - {fileID: 8300000, guid: 9af3b70c4d80049debc2283368775160, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - m_sSoundKey: UI_Select
     m_pClips:
     - {fileID: 8300000, guid: bbbe0cdcc217b44ad882239609c64efa, type: 3}
@@ -1605,21 +1604,21 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f40f47dc8b8884db28d019a8caa04415, type: 3}
   - m_sSoundKey: UFO_In
     m_pClips:
-    - {fileID: 8300000, guid: e82f2f8d19ec942d58a54f0626a1c862, type: 3}
-    - {fileID: 8300000, guid: 9fac2ffb7bcd84bdea43e504701e5f12, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
   - m_sSoundKey: UFO_Out
     m_pClips:
-    - {fileID: 8300000, guid: f177c8c6ebd4d43689432353b5f60249, type: 3}
-    - {fileID: 8300000, guid: d0f7fc27187b540568d1f6ce754f52f7, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
   - m_sSoundKey: Octopus_Loop
     m_pClips:
-    - {fileID: 8300000, guid: 5da34a91039bb462e868690d55399810, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Octopus_Attack
     m_pClips:
-    - {fileID: 8300000, guid: 518133bc5198c4391a03848efa21f406, type: 3}
-    - {fileID: 8300000, guid: bb90e4551c9ee4dcba7a0d5a54ffc568, type: 3}
-    - {fileID: 8300000, guid: 7606338bc0dc8418d915359ba5626ad6, type: 3}
-    - {fileID: 8300000, guid: 0a864984867e943cc8e908e3a4e3e4c8, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - m_sSoundKey: Piano_Crash
     m_pClips:
     - {fileID: 8300000, guid: 8699cd7cf25d845ba80c889c6595038e, type: 3}
@@ -1628,9 +1627,9 @@ MonoBehaviour:
     - {fileID: 8300000, guid: a5f4d2b5d334b4442befe6dc65440092, type: 3}
   - m_sSoundKey: Fruit_Impact
     m_pClips:
-    - {fileID: 8300000, guid: 61b119d42be38463ab3a83474ec17cb0, type: 3}
-    - {fileID: 8300000, guid: f3fa15e1be5f94b5b8bed888170dc95f, type: 3}
-    - {fileID: 8300000, guid: dcfc19ed4dc7a4f88a8c11be1c1f1612, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - m_sSoundKey: Cow_Moo
     m_pClips:
     - {fileID: 8300000, guid: b151fed5ebca34e469c811598cfbb7a6, type: 3}
@@ -1644,28 +1643,28 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 7f5ea209d2881413f8e7582030c0a35a, type: 3}
   - m_sSoundKey: Countdown_In
     m_pClips:
-    - {fileID: 8300000, guid: 3992324af7ab945249c6e7733713970f, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Countdown_05
     m_pClips:
-    - {fileID: 8300000, guid: 382761545f1a24c82864f67b4d8947a8, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Countdown_04
     m_pClips:
-    - {fileID: 8300000, guid: 025e3685fa2e4481aa91bc7832cc5388, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Countdown_03
     m_pClips:
-    - {fileID: 8300000, guid: 3b7c310b5b9ea4583915633dd70c8003, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Countdown_02
     m_pClips:
-    - {fileID: 8300000, guid: a29b5d2f6621d4901bb63e374270a6e5, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Countdown_01
     m_pClips:
-    - {fileID: 8300000, guid: fcd6693c4004c4cd19e9fb0b8752d57c, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Countdown_00
     m_pClips:
-    - {fileID: 8300000, guid: 8d800d5f08c3e4aa79a40240b805ef05, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Duck
     m_pClips:
-    - {fileID: 8300000, guid: f26679158d4d5410a83400b1818384c9, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Death_F
     m_pClips:
     - {fileID: 8300000, guid: c39ac032b33964ff8be056b569dd4cdf, type: 3}
@@ -1684,7 +1683,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 02338762a225640f597b2db7ed834570, type: 3}
   - m_sSoundKey: Countdown_Start
     m_pClips:
-    - {fileID: 8300000, guid: 3992324af7ab945249c6e7733713970f, type: 3}
+    - {fileID: 0}
   - m_sSoundKey: Floor_Crack
     m_pClips:
     - {fileID: 8300000, guid: 9eee5e7b23323fa4493de7ca7bd401c0, type: 3}
@@ -2443,11 +2442,11 @@ RectTransform:
   m_Children:
   - {fileID: 245684230}
   m_Father: {fileID: 33771042}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -195}
+  m_AnchoredPosition: {x: 0, y: -305}
   m_SizeDelta: {x: 800, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &661226996
@@ -3162,80 +3161,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.8491216, y: 4.3117986, z: 0.19754176}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &967204622
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 967204623}
-  - component: {fileID: 967204625}
-  - component: {fileID: 967204624}
-  m_Layer: 5
-  m_Name: Title
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &967204623
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 967204622}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
-  m_Children: []
-  m_Father: {fileID: 33771042}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 108}
-  m_SizeDelta: {x: 760, y: 290}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &967204624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 967204622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.21176471, g: 0.22352941, b: 0.24705882, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: b60b578145bba104eb4fab8d14a9cc71, type: 3}
-    m_FontSize: 300
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 300
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: TITRE
---- !u!222 &967204625
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 967204622}
 --- !u!1 &992899746
 GameObject:
   m_ObjectHideFlags: 0
