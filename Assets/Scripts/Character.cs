@@ -308,6 +308,8 @@ public class Character : MonoBehaviour
 
 	private void Taunt()
 	{
+		m_bActive = false;
+
 		m_pAnimator.SetTrigger("Taunt");
 		AudioManager.Instance.PlaySound("Taunt_" + m_sName, m_pTauntsAudioSource);
 
